@@ -31,13 +31,13 @@ SET time_zone = "+00:00";
 CREATE TABLE `courses` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `degree_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `period` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci,
+  `period` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `year` tinyint(3) UNSIGNED NOT NULL,
   `cfu` tinyint(3) UNSIGNED NOT NULL,
-  `website` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `website` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `courses`
@@ -1376,7 +1376,7 @@ INSERT INTO `courses` (`id`, `degree_id`, `name`, `description`, `period`, `year
 CREATE TABLE `course_teacher` (
   `course_id` bigint(20) UNSIGNED NOT NULL,
   `teacher_id` bigint(20) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `course_teacher`
@@ -2710,12 +2710,12 @@ INSERT INTO `course_teacher` (`course_id`, `teacher_id`) VALUES
 CREATE TABLE `degrees` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `department_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `level` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `website` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `level` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `website` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `degrees`
@@ -2806,13 +2806,13 @@ INSERT INTO `degrees` (`id`, `department_id`, `name`, `level`, `address`, `email
 
 CREATE TABLE `departments` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `website` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `head_of_department` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `website` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `head_of_department` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `departments`
@@ -2843,9 +2843,9 @@ CREATE TABLE `exams` (
   `course_id` bigint(20) UNSIGNED NOT NULL,
   `date` date NOT NULL,
   `hour` time NOT NULL,
-  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `location` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `exams`
@@ -9458,7 +9458,7 @@ CREATE TABLE `exam_student` (
   `exam_id` bigint(20) UNSIGNED NOT NULL,
   `student_id` bigint(20) UNSIGNED NOT NULL,
   `vote` tinyint(3) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `exam_student`
@@ -52065,14 +52065,14 @@ INSERT INTO `exam_student` (`exam_id`, `student_id`, `vote`) VALUES
 CREATE TABLE `students` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `degree_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `surname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `surname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `date_of_birth` date NOT NULL,
-  `fiscal_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fiscal_code` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `enrolment_date` date NOT NULL,
-  `registration_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `registration_number` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `students`
@@ -57099,13 +57099,13 @@ INSERT INTO `students` (`id`, `degree_id`, `name`, `surname`, `date_of_birth`, `
 
 CREATE TABLE `teachers` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `surname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `office_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `office_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `surname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `office_address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `office_number` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `teachers`
